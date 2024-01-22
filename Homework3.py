@@ -1,5 +1,4 @@
-products_list = input("Enter the list of products by separating them with a space: ")
-products_list = products_list.split()
+products_list = input("Enter the list of products by separating them with a space: ").split()
 
 while len(products_list) > 0:
     print("Your products list: ", ', '.join(products_list))
@@ -8,7 +7,7 @@ while len(products_list) > 0:
         change_products_list = input('Enter "product name" to add it or "-product name" to del it: ')
 
     if change_products_list.startswith('-'):
-        change_products_list = change_products_list.strip('-')
+        change_products_list = change_products_list.lstrip('-')
 
         if change_products_list in products_list:
             products_list.remove(change_products_list)
