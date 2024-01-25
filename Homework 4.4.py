@@ -7,5 +7,8 @@ for word in string_for_calculate:
     else:
         dict_for_calculate[word] = 1
 
+    #dict_for_calculate[word] = dict_for_calculate.get(word, 0) + 1
+
 for el in dict_for_calculate:
     print((f"Символ '{el}' зустрічається {dict_for_calculate.get(el)} раз"))
+
