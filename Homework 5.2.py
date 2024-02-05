@@ -20,8 +20,8 @@ while counter < 4:
 
         if str_operator not in ['/', '*']:
             raise WrongOperatorError('Error: Incorrect operator')
-        if str_operator == '/' and float_second_number == 0:
-            raise ZeroDivisionError('ZeroDivisionError')
+        # if str_operator == '/' and float_second_number == 0:
+        #     raise ZeroDivisionError('ZeroDivisionError')
 
         if str_operator == '/':
             result = float_first_number / float_second_number
