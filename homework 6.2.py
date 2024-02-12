@@ -1,4 +1,4 @@
-def get_sum(number:int, operator:str):
+def get_sum(number: int, operator: str):
     def print_table(number):
         for i in range(1, 11):
             if operator == '*':
