@@ -2,20 +2,21 @@ import time
 
 
 def decorator(fun):
-    def wrapper(num1, num2):
+    def wrapper(*args):
         time_before = time.time()
-        fun(num1, num2)
+        result = fun(*args)
         time_after = time.time()
-        print("Час виконання функції, сек: ", round(time_after - time_before, 2))
-
+        print("Час виконання функції, сек: ", time_after - time_before)
+        return result
     return wrapper
 
 
 @decorator
-def get_square(num1, num2):
-    for k in range(num1, num2):
-        square = k ** 2
-        print(square)
+def get_square(*args):
+    res = []
+    for k in range(*args):
+        res.append(k ** 2)
+    return res
 
 
-get_square(2, 100000)
+print(get_square(2, 100000, 2))
