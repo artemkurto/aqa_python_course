@@ -6,10 +6,8 @@ class Train:
         wagon = Wagons(wagon_number)
         self.wagons.append(wagon)
 
-
     def __len__(self):
         return len(self.wagons) - 1
-
 
     def __str__(self):
         return '<=[' + '] - ['.join(str(wagon.wagon_number) for wagon in self.wagons) + ']'
@@ -21,6 +19,9 @@ class Wagons:
         self.passengers = []
 
     def add_passengers(self, passenger):
+        if self.wagon_number == 'HEAD':
+            print("Passengers cannot be added to the locomotive (HEAD).")
+            return
         if len(self.passengers) < 10:
             self.passengers.append(passenger)
         else:
@@ -45,5 +46,3 @@ wagon1.add_passengers("Suzanna")
 print('Number of wagons: ', len(train))
 print(train)
 print('Number of passengers in wagon: ', len(wagon1.passengers))
-
-
