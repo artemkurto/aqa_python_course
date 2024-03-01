@@ -27,7 +27,6 @@ class ProxyReaderWriter:
         self.writer = Writer(file_path)
         self.data = None
         self.previous_row = None
-        self.is_changed = False
 
     def read(self):
         """
@@ -35,13 +34,12 @@ class ProxyReaderWriter:
         :return: None
         """
 
-        if self.data is not None and self.is_changed is False:
-            print('Файл не прочитан\n', self.data)
-        else:
-            self.reader.read_file()
-            self.data = self.reader.data
-            self.is_changed = False
-            print('Файл прочитан\n', self.data)
+        if self.data:
+            print('Don not read the file \n', self.data)
+            return
+        self.reader.read_file()
+        self.data = self.reader.data
+        print('Read the file\n', self.data)
 
     def write(self, row):  # write realisation
         """
@@ -52,12 +50,12 @@ class ProxyReaderWriter:
         """
 
         if row == self.previous_row:
-            print("Запис не відбувся")
+            print("Did not write")
             return
         self.writer.write_file(row)
         self.previous_row = row
-        self.is_changed = True
-        print(f'Записано до файлу {self.file_path} наступний рядок: {row}')
+        self.data = None
+        print(f'Wrote: {row}')
 
 
 proxy_rw = ProxyReaderWriter(file_path='tst_file.txt')
