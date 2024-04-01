@@ -12,11 +12,11 @@ class Reader:
 class Writer:  # write realisation
     def __init__(self, file_path):
         self.__file_path = file_path
-        self.data = None
+        self.data123 = None
 
     def write_file(self, row):
         with open(self.__file_path, 'a') as f:
-            self.data = f.write('\n' + row)
+            self.data123 = f.write('\n' + row)
 
 
 class ProxyReaderWriter:
