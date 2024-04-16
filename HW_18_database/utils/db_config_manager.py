@@ -3,7 +3,7 @@ import configparser
 
 from os import path
 
-from HW_18_data_base.utils.constants import ROOT_PATH
+from HW_18_database.utils.constants import ROOT_PATH
 
 _config_path = path.join(ROOT_PATH, 'config.ini')
 

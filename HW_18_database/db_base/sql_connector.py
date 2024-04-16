@@ -1,8 +1,8 @@
 import sqlite3
 from os.path import join
 
-from HW_18_data_base.utils.constants import ROOT_PATH
-from HW_18_data_base.utils.db_config_manager import DBConfigManager
+from HW_18_database.utils.constants import ROOT_PATH
+from HW_18_database.utils.db_config_manager import DBConfigManager
 
 
 class BaseSqliteConnector:

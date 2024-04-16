@@ -1,4 +1,4 @@
-from HW_18_data_base.db_base.sql_connector import SqliteConnector
+from HW_18_database.db_base.sql_connector import SqliteConnector
 
 
 def execute_sql_query(fn):

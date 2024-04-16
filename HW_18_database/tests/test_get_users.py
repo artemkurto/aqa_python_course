@@ -1,6 +1,6 @@
-from HW_18_data_base.sql_user_table import SqliteUsersTable
+from HW_18_database.sql_user_table import SqliteUsersTable
 from assertpy import assert_that
-from HW_18_data_base.assertations.assertation import assert_one_user
+from HW_18_database.assertations.assertation import assert_one_user
 
 
 def test_get_all_users():

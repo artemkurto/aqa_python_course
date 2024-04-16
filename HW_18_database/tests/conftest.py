@@ -1,7 +1,7 @@
 from random import choice
 import pytest
-from HW_18_data_base.sql_user_table import SqliteUsersTable
-from HW_18_data_base.sql_products_table import SqliteProductsTable
+from HW_18_database.sql_user_table import SqliteUsersTable
+from HW_18_database.sql_products_table import SqliteProductsTable
 
 
 @pytest.fixture

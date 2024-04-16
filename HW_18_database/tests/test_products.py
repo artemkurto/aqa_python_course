@@ -1,4 +1,4 @@
-from HW_18_data_base.sql_products_table import SqliteProductsTable
+from HW_18_database.sql_products_table import SqliteProductsTable
 from assertpy import assert_that
 from random import choice
 import pytest
@@ -8,7 +8,6 @@ import sqlite3
 def test_get_all_products():
     products = SqliteProductsTable().get_all_products()
     assert_that(len(products), 'Products > 0').is_not_zero()
-    assert products
 
 
 def test_create_product():
@@ -54,7 +53,9 @@ def test_get_product_by_wrong_id():
 def test_update_price_negative():
     product_id = 8786
     new_price = '800$'
-    try:
+    with pytest.raises(sqlite3.OperationalError):
         SqliteProductsTable().update_price_by_id(product_id, new_price)
-    except sqlite3.OperationalError as e:
-        print(f"Виникла помилка: {e}")
+    # try:
+    #     SqliteProductsTable().update_price_by_id(product_id, new_price)
+    # except sqlite3.OperationalError as e:
+    #     print(f"Виникла помилка: {e}")

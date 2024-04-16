@@ -1,5 +1,5 @@
 from random import choice
-from HW_18_data_base.db_base.base_sql_table import execute_sql_query
+from HW_18_database.db_base.base_sql_table import execute_sql_query
 
 
 class SqliteProductsTable:
@@ -46,4 +46,4 @@ CREATE TABLE IF NOT EXISTS Products (
 """
 
 
-print(SqliteProductsTable().create_table())
+
